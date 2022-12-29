@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../component/Card";
 import api from "../config/api";
+import MainLayout from "../layout/MainLayout";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -16,11 +17,11 @@ const Home = () => {
       >
         Characters
       </h1>
-      <main className="mt-4 p-6 grid grid-cols-5 gap-4">
+      <MainLayout>
         {data.map((item) => (
           <Card item={item} />
         ))}
-      </main>
+      </MainLayout>
     </>
   );
 };
