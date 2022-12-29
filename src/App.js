@@ -1,28 +1,23 @@
-import { useEffect, useState } from "react";
-import Card from "./component/Card";
-import api from "./config/api";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
+import Home from "./pages/Home";
+import Episode from "./pages/Episode";
+import Location from "./pages/Location";
+import NotFound from "./pages/NotFound";
+import Navbar from "./component/Navbar";
 
 const App = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    api.get("character").then((res) => setData(res.data.results));
-  }, []);
-
   return (
     <>
-      <h1
-        className="text-3xl font-bold  text-emerald-500 text-center
-      mt-2 "
-      >
-        apisauce & zustand
-      </h1>
-      <main className="mt-4 p-6 grid grid-cols-5 gap-4">
-        {data.map((item) => (
-          <Card item={item} />
-        ))}
-      </main>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/episode" element={<Episode />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
     </>
   );
 };
