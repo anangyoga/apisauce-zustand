@@ -1,9 +1,10 @@
 import React from "react";
 
-const Card = (props) => {
+const Card = ({ item }) => {
   return (
     <div className="border rounded-lg max-w-md shadow-md p-4">
-      <p>{props.name}</p>
+      <img src={item.image} alt="" />
+      <p>{item.name}</p>
     </div>
   );
 };
