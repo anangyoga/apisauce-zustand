@@ -9,7 +9,6 @@ const Episode = () => {
     api.get("episode").then((res) => setEpisodes(res.data?.results));
   }, []);
 
-  console.log(episodes, "yuk");
   return (
     <>
       <h1
