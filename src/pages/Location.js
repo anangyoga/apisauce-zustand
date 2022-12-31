@@ -15,7 +15,7 @@ const Location = () => {
         className="text-3xl font-bold  text-emerald-500 text-center
       mt-2 "
       >
-        Location
+        Locations
       </h1>
 
       <MainLayout>
